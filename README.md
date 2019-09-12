@@ -1,14 +1,19 @@
-# Civic returns to college: HSLS + propensity forests
+This repository contains the replication files for  
+
+> Skinner, B.T. and Doyle, W.R. (working). Are civic returns to higher education different across
+  subpopulations? An analysis using propensity forests
 
 ## To run
 
-`cd` into project directory and run the `makefile`:
+Clone the project repository, `cd` into project directory, and run the `makefile`:
 
-```shell
+```bash
+git clone https://github.com/btskinner/civic_returns_pf.git
+cd ./civic_returns_pf
 make
 ```
 
-Or do it piece by piece:
+Or, after cloning the repository, run the R scripts one by one:
 
 1. `check_packages.r`  
 1. `make_data.r`  
@@ -20,6 +25,7 @@ Or do it piece by piece:
 
 ## Download HSLS raw data file
 
-If not using the makefile, you need to download
+If not using the `makefile`, you need to download
 `hsls_16_student_v1_0.csv` and place in `data/raw` subdirectory.
+
 
