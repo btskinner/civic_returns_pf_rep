@@ -8,8 +8,8 @@ This repository contains the replication files for
 Clone the project repository, `cd` into project directory, and run the `makefile`:
 
 ```bash
-git clone https://github.com/btskinner/civic_returns_pf.git
-cd ./civic_returns_pf
+git clone https://github.com/btskinner/civic_returns_pf_rep.git
+cd ./civic_returns_pf_rep
 make
 ```
 
