@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% [ PROJ ] Civic returns: propensity forests
+% [ FILE ] paper_tabfig.tex
+% [ AUTH ] Benjamin Skinner & Will Doyle
+% [ INIT ] 10 July 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ------------------------------------------------------------------------------
+% SETTINGS
+% ------------------------------------------------------------------------------
+
+% class and font size
+\documentclass[12pt]{article}
+
+% packages
+\usepackage[margin=1in]{geometry} % margins
+\usepackage[T1]{fontenc}          % fonts
+\usepackage[utf8]{inputenc}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{mathptmx}
+\usepackage[style=apa,          % bibliography
+backend=biber,
+sortcites=true,
+sorting=nyt,
+language=american]{biblatex}
+\usepackage{tabularx}           % tables
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{graphicx}           % graphics
+\usepackage[linktocpage]{hyperref} % links
+\usepackage{setspace}           % spacing options
+\usepackage{fancyhdr}           % header & footer options
+\usepackage{datetime}           % better date
+\usepackage{enumitem}           % better lists
+\usepackage{appendix}           % appendix
+\usepackage[nolists,            % endfloat tables & figures
+nomarkers]{endfloat}
+
+% directories
+\newcommand{\rootpath}{..}
+\newcommand{\figdir}{\rootpath/figures/paper}
+\newcommand{\tabdir}{\rootpath/tables}
+\newcommand{\bibfile}{\rootpath/sources.bib}
+
+% table alignment
+\newcommand{\RR}{\raggedright\arraybackslash}
+\newcommand{\RL}{\raggedleft\arraybackslash}
+
+% note for figure
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\newcommand{\fignote}[1]{\caption*{\footnotesize {\bfseries Note.} #1}}
+\newcommand{\coefplotnote}{
+  \fignote{Center points represent the average treatment
+    effect estimate for each subgroup, with vertical lines plotting
+    the 95\% confidence interval. Each point is labeled with its
+    estimate as well as the $p$-value from the test of its
+    difference from zero.}
+}
+
+% turn off endfloat newpage after each figure
+\renewcommand{\efloatseparator}{\mbox{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% BEGIN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{document}
+
+% header
+\begin{center}
+  {\sc{\bfseries Are civic returns to higher education different
+      across subpopulations? An analysis using propensity forests} \\
+    Paper Tables and Figures}
+\end{center}
+
+\listoftables
+\listoffigures
+
+% ------------------------------------------------------------------------------
+% TABLES
+% ------------------------------------------------------------------------------
+
+\cleardoublepage
+\input{\tabdir/predlab}
+
+\cleardoublepage
+\input{\tabdir/predmod}
+
+% ------------------------------------------------------------------------------
+% FIGURES
+% ------------------------------------------------------------------------------
+
+% DESCRIPTIVE
+\begin{figure}
+  \caption{Descriptive measures of civic participation or beliefs by
+    college enrollment}
+  \label{fig:desc}
+  \includegraphics[width=\linewidth]{{\figdir/descriptive_discrete_uw.pdf}}
+  \caption*{\fignote{All values represent unweighted averages by
+      subgroup. Percentages in each facet are relative within
+      enrollment condition.}}
+\end{figure}  
+
+% Vote and volunteering, race X gender
+\begin{figure}
+  \caption{Average treatment effect estimate of college enrollment on
+    voting and volunteering behavior across gender and race / ethnicity.}
+  \label{fig:vv_gr}
+  \includegraphics[width=\linewidth]{{\figdir/vv_gender_race.pdf}}
+  \caption*{\coefplotnote}
+\end{figure}
+
+% Vote and volunteering, race X poverty
+\begin{figure}
+  \caption{Average treatment effect estimate of college enrollment on
+    voting and volunteering behavior across poverty level and race /
+    ethnicity.}
+  \label{fig:vv_pr}
+  \includegraphics[width=\linewidth]{{\figdir/vv_poverty_race.pdf}}
+  \caption*{\coefplotnote}
+\end{figure}
+
+% Job measures, race X gender
+\begin{figure}
+  \caption{Average treatment effect estimate of college enrollment on
+    beliefs about relative importance of salary across gender and race
+    / ethnicity.}
+  \label{fig:jb_gr}
+  \includegraphics[width=\linewidth]{{\figdir/jb_gender_race.pdf}}
+  \caption*{\coefplotnote}
+\end{figure}
+
+% Job measures, race X poverty
+\begin{figure}
+  \caption{Average treatment effect estimate of college enrollment on
+    beliefs about relative importance of salary across poverty level and
+    race / ethnicity.}
+  \label{fig:jb_pr}
+  \includegraphics[width=\linewidth]{{\figdir/jb_poverty_race.pdf}}
+  \caption*{\coefplotnote}
+\end{figure}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%% END DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

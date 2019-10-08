@@ -26,6 +26,7 @@ req_packages <- c('tidyverse',
                   'grf',
                   'haven',
                   'Hmisc',
+                  'httr',
                   'parallel',
                   'Tmisc',
                   'xtable')

@@ -11,7 +11,7 @@
 args <- commandArgs(trailingOnly = TRUE)
 root <- ifelse(length(args) == 0, '..', args)
 dat_dir <- file.path(root, 'data')
-raw_dir <- file.path(dat_dir,'raw')
+raw_dir <- file.path(dat_dir, 'raw')
 cln_dir <- file.path(dat_dir, 'clean')
 scr_dir <- file.path(root, 'scripts')
 
@@ -29,7 +29,7 @@ proj_message('make_data.r','h')
 ## -----------------------------------------------
 
 proj_message('Reading in variable list')
-cw <- read_csv(file.path(raw_dir, 'varlist.csv'),
+cw <- read_csv(file.path(dat_dir, 'varlist.csv'),
                col_types = cols(varname = 'c',
                                 varlabel = 'c',
                                 vartype = 'c',

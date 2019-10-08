@@ -1,3 +1,9 @@
 # .gitignore
 
 .DS_Store
+*.rds
+
+data/raw
+data/clean
+descriptives
+estimates
