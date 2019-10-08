@@ -31,7 +31,7 @@ proj_message('make_tables.r','h')
 ## -----------------------------------------------
 
 proj_message('Reading and munging variable selection data')
-cw <- read_csv(file.path(raw_dir, 'varlist.csv'),
+cw <- read_csv(file.path(dat_dir, 'varlist.csv'),
                col_types = cols(varname = 'c',
                                 varlabel = 'c',
                                 vartype = 'c',

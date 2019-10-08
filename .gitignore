@@ -2,8 +2,21 @@
 
 .DS_Store
 *.rds
+Rplots.pdf
+
+*.aux
+*.bcf
+*.fff
+*.loc
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
 
 data/raw
 data/clean
 descriptives
 estimates
+figures
+tables

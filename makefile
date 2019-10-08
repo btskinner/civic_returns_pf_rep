@@ -28,14 +28,14 @@ est_output := $(EST_DIR)/vot_reg_cf.rds
 ate_output := $(EST_DIR)/vot_reg_cf_est.csv
 fig_output := $(FIG_DIR)/vv_gender_race.pdf
 tab_output := $(TAB_DIR)/predlab.tex
-doc_output := $(DOC_DIR)/paper_tabfig.tex
+doc_output := paper_tabfig.pdf
 
 # --- build targets ------------------------------
 
 all: setup data descriptives analysis figures tables doc
 
 descriptives: $(des_output)
-docs: $(doc_output)
+doc: $(doc_output)
 analysis: $(est_output)
 figures: $(fig_output)
 tables: $(tab_output)
@@ -96,7 +96,10 @@ $(fig_output): $(SCR_DIR)/make_figures.r $(ate_output) $(des_output)
 
 $(doc_output): $(tab_output) $(fig_output)
 	@echo "Compiling documents"	
-	pdflatex $@
+	cd $(DOC_DIR)
+	pdflatex --output-directory $(DOC_DIR) $(addsuffix .tex, $(basename $@)) > /dev/null
+	pdflatex --output-directory $(DOC_DIR) $(addsuffix .tex, $(basename $@)) > /dev/null
+	cd ..
 
 # --- clean up -----------------------------------
 
