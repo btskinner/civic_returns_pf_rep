@@ -15,7 +15,8 @@ make
 
 Or, after cloning the repository, run the R scripts one by one:
 
-1. `check_packages.r`  
+1. `check_packages.r`
+1. `get_data.r`  
 1. `make_data.r`  
 1. `make_descriptives.r`  
 1. `fit_trees.r`  
@@ -23,9 +24,5 @@ Or, after cloning the repository, run the R scripts one by one:
 1. `make_figures.r`  
 1. `make_tables.r`  
 
-## Download HSLS raw data file
-
-If not using the `makefile`, you need to download
-`hsls_16_student_v1_0.csv` and place in `data/raw` subdirectory.
 
 
