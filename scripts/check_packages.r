@@ -21,6 +21,7 @@ proj_message("check_packages.r","h")
 req_packages <- c("tidyverse",
                   "caret",
                   "extrafont",
+                  "gridExtra",
                   "ggpubr",
                   "ggrepel",
                   "grf",
