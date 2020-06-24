@@ -46,23 +46,26 @@ language=american]{biblatex}
 nomarkers]{endfloat}
 
 % directories
-\newcommand{\rootpath}{.}
+\newcommand{\rootpath}{..}
 \newcommand{\figdir}{\rootpath/figures}
 \newcommand{\tabdir}{\rootpath/tables}
+\newcommand{\bibfile}{\rootpath/sources.bib}
 
 % table alignment
 \newcommand{\RR}{\raggedright\arraybackslash}
 \newcommand{\RL}{\raggedleft\arraybackslash}
+\newcommand{\CC}{\centering\arraybackslash}
 
 % note for figure
 \captionsetup{justification=raggedright,singlelinecheck=false}
 \newcommand{\fignote}[1]{\caption*{\footnotesize {\bfseries Note.} #1}}
 \newcommand{\coefplotnote}{
-  \fignote{Center points represent the average treatment
-    effect estimate for each subgroup, with vertical lines plotting
-    the 95\% confidence interval. Each point is labeled with its
-    estimate as well as the $p$-value from the test of its
-    difference from zero.}
+  \fignote{Center points represent the average estimate for each
+    subgroup, with vertical lines plotting the 95\% confidence
+    interval. Each point is labeled with its estimate as well as the
+    $p$-value from the test of its difference from zero. Sample sizes
+    for each subgroup are shown along the $x$-axis under the group
+    estimate.}
 }
 
 % turn off endfloat newpage after each figure
@@ -75,29 +78,13 @@ nomarkers]{endfloat}
 
 % header
 \begin{center}
-  {\sc{\bfseries Are civic returns to higher education different
+  {\sc{\bfseries Do civic returns to higher education differ
       across subpopulations? An analysis using propensity forests} \\
-    Paper Tables and Figures} \\
-  \vspace{2em}
-  \begin{tabular}{cc}
-    Benjamin T. Skinner & William R. Doyle \\
-    University of Florida & Vanderbilt University \\
-  \end{tabular}
-  \vspace{2em}
+    Paper Tables and Figures}
 \end{center}
 
-\listoftables
 \listoffigures
-
-% ------------------------------------------------------------------------------
-% TABLES
-% ------------------------------------------------------------------------------
-
-\cleardoublepage
-\input{\tabdir/predlab}
-
-\cleardoublepage
-\input{\tabdir/predmod}
+\listoftables
 
 % ------------------------------------------------------------------------------
 % FIGURES
@@ -105,53 +92,88 @@ nomarkers]{endfloat}
 
 % DESCRIPTIVE
 \begin{figure}
-  \caption{Descriptive measures of civic participation or beliefs by
-    college enrollment}
+  \caption{Variation in civic participation as seen in the data (left)
+  and as a function of college participation (right).}
   \label{fig:desc}
-  \includegraphics[width=\linewidth]{{\figdir/descriptive_discrete_uw.pdf}}
+  \includegraphics[width=\linewidth]{{\figdir/desc_het.pdf}}
   \caption*{\fignote{All values represent unweighted averages by
-      subgroup. Percentages in each facet are relative within
-      enrollment condition.}}
+      subgroup. Percentages show in left-hand side facets are relative
+      within enrollment condition. Histograms on the right-hand side
+      show observation-level variation in the $\tau(x)$ estimates
+      produced by the propensity forest models.}}
 \end{figure}  
 
-% Vote and volunteering, race X gender
+% ATE: gender, raceeth, poverty
 \begin{figure}
-  \caption{Average treatment effect estimate of college enrollment on
-    voting and volunteering behavior across gender and race / ethnicity.}
-  \label{fig:vv_gr}
-  \includegraphics[width=\linewidth]{{\figdir/vv_gender_race.pdf}}
+  \caption{Estimated returns of college enrollment on voting and volunteering 
+    behavior by gender, race / ethnicity, and poverty status}
+  \label{fig:grp}
+  \includegraphics[width=\linewidth]{{\figdir/gender_race_pov_q80.pdf}}
   \caption*{\coefplotnote}
 \end{figure}
 
-% Vote and volunteering, race X poverty
+% ATE: gender X race/ethnicity
 \begin{figure}
-  \caption{Average treatment effect estimate of college enrollment on
-    voting and volunteering behavior across poverty level and race /
-    ethnicity.}
-  \label{fig:vv_pr}
-  \includegraphics[width=\linewidth]{{\figdir/vv_poverty_race.pdf}}
+  \caption{Estimated returns of college enrollment on voting and volunteering 
+    behavior: race/ethnicity by gender}
+  \label{fig:g_x_r}
+  \includegraphics[width=\linewidth]{{\figdir/gender_x_race_q80.pdf}}
   \caption*{\coefplotnote}
 \end{figure}
 
-% Job measures, race X gender
+% ATE: poverty status X race/ethnicity
 \begin{figure}
-  \caption{Average treatment effect estimate of college enrollment on
-    beliefs about relative importance of salary across gender and race
-    / ethnicity.}
-  \label{fig:jb_gr}
-  \includegraphics[width=\linewidth]{{\figdir/jb_gender_race.pdf}}
+  \caption{Estimated returns of college enrollment on voting and volunteering 
+    behavior: race/ethnicity by poverty status}
+  \label{fig:p_x_r}
+  \includegraphics[width=\linewidth]{{\figdir/poverty_x_race_q80.pdf}}
   \caption*{\coefplotnote}
 \end{figure}
 
-% Job measures, race X poverty
+% ATE: propensity
 \begin{figure}
-  \caption{Average treatment effect estimate of college enrollment on
-    beliefs about relative importance of salary across poverty level and
-    race / ethnicity.}
-  \label{fig:jb_pr}
-  \includegraphics[width=\linewidth]{{\figdir/jb_poverty_race.pdf}}
+  \caption{Estimated returns of college enrollment on voting and volunteering 
+    behavior by propensity of enrollment}
+  \label{fig:propensity}
+  \includegraphics[width=\linewidth]{{\figdir/propensity_q80.pdf}}
   \caption*{\coefplotnote}
 \end{figure}
+
+% ------------------------------------------------------------------------------
+% TABLES
+% ------------------------------------------------------------------------------
+
+\processdelayedfloats
+\appendix
+\renewcommand\thetable{A.\arabic{table}}
+
+\cleardoublepage
+{\footnotesize
+  \input{\tabdir/comparison}
+}
+
+\cleardoublepage
+{\footnotesize
+  \input{\tabdir/estimates}
+}
+
+\cleardoublepage
+{\footnotesize
+  \input{\tabdir/predlab}
+}
+
+\cleardoublepage
+{\footnotesize
+  \input{\tabdir/predmod}
+}
+
+\cleardoublepage
+\input{\tabdir/calibration}
+
+\cleardoublepage
+{\scriptsize
+  \input{\tabdir/regressions}
+}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
