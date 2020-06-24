@@ -9,8 +9,8 @@ X2UNIV1,X2 Sample member status in BY and F1 rounds,IDs and weights,0,0,0,0,IDs,
 X2UNIV2A,X2 Base year status and how sample member entered F1 sample,IDs and weights,0,0,0,0,IDs,X2,0,
 X2UNIV2B,X2 Sample member F1 status,IDs and weights,0,0,0,0,IDs,X2,0,
 X3UNIV1,"X3 Sample member status in BY, F1, U13, and HS transcript rounds",IDs and weights,0,0,0,0,IDs,X3,0,
-X4UNIV1,"X4 Sample member status in BY, F1, U13,  HS transcript, and F2 rounds",IDs and weights,0,0,0,0,IDs,X4,0,
-W1STUDENT,W1 Base year student analytic weight,IDs and weights,1,0,0,0,IDs,W1,0,
+X4UNIV1,"X4 Sample member status in BY, F1, U13,  HS transcript, and F2 rounds",IDs and weights,1,0,0,0,IDs,X4,0,
+W1STUDENT,W1 Base year student analytic weight,IDs and weights,0,0,0,0,IDs,W1,0,
 W1PARENT,W1 Base year student home analytic weight,IDs and weights,0,0,0,0,IDs,W1,0,
 W1MATHTCH,W1 Base year math-course enrollee analytic weight,IDs and weights,0,0,0,0,IDs,W1,0,
 W1SCITCH,W1 Base year science-course enrollee analytic weight,IDs and weights,0,0,0,0,IDs,W1,0,
@@ -49,7 +49,7 @@ X1DUALLANG,X1 Student dual-first language indicator,BY student level composites,
 X1STDOB,X1 Student's date of birth (YYYYMM),BY student level composites,1,0,0,0,BY,X1,0,9
 X1TXMTH,X1 Mathematics theta score,BY student level composites,1,0,0,0,BY,X1,0,
 X1TXMSEM,X1 Mathematics standard error of measurement for raw theta score,BY student level composites,0,0,0,0,BY,X1,0,
-X1TXMSCR,X1 Mathematics IRT-estimated number right score (of 72 base year items),BY student level composites,0,0,0,0,BY,X1,0,
+X1TXMSCR,1,BY student level composites,0,0,0,0,BY,X1,0,
 X1TXMTSCOR,X1 Mathematics standardized theta score,BY student level composites,0,0,0,0,BY,X1,0,
 X1TXMQUINT,X1 Mathematics quintile score,BY student level composites,0,0,0,0,BY,X1,0,
 X1TXMPROF1,X1 Mathematics proficiency probability score: level 1,BY student level composites,0,0,0,0,BY,X1,0,
@@ -58,48 +58,48 @@ X1TXMPROF3,X1 Mathematics proficiency probability score: level 3,BY student leve
 X1TXMPROF4,X1 Mathematics proficiency probability score: level 4,BY student level composites,0,0,0,0,BY,X1,0,
 X1TXMPROF5,X1 Mathematics proficiency probability score: level 5,BY student level composites,0,0,0,0,BY,X1,0,
 X1MACC,X1 Mathematics assessment accommodations,BY student level composites,1,1,0,0,BY,X1,0,8
-X1PARRESP,X1 Whether parent questionnaire respondent is Parent 1,BY student level composites,0,0,0,0,BY,X1,0,
-X1P1RELATION,X1 Parent 1: relationship to 9th grader,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAR1EDU,X1 Parent 1: highest level of education,BY student level composites,1,1,0,0,BY,X1,0,8
-X1PAR1EMP,X1 Parent 1: employment status,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAR1OCC2,X1 Parent 1: current/most recent occupation: 2-digit ONET code,BY student level composites,0,0,0,0,BY,X1,0,
+X1PARRESP,X1 Whether parent questionnaire respondent is Parent 1,BY student level composites,1,1,0,0,BY,X1,0,8
+X1P1RELATION,X1 Parent 1: relationship to 9th grader,BY student level composites,1,1,0,0,BY,X1,0,8
+X1PAR1EDU,X1 Parent 1: highest level of education,BY student level composites,1,0,0,0,BY,X1,0,89
+X1PAR1EMP,X1 Parent 1: employment status,BY student level composites,1,0,0,0,BY,X1,0,89
+X1PAR1OCC2,X1 Parent 1: current/most recent occupation: 2-digit ONET code,BY student level composites,1,0,0,0,BY,X1,0,789
 X1PAR1OCC6,X1 Parent 1: current/most recent occupation: 6-digit ONET code,BY student level composites,0,0,0,0,BY,X1,1,
 X1PAR1OCC_STEM1,X1 Parent 1: current/most recent occupation: STEM code 1 (sub-domain),BY student level composites,0,0,0,0,BY,X1,0,
 X1PAR1OCC_STEM2,X1 Parent 1: current/most recent occupation: STEM code 2 (type of occupation),BY student level composites,0,0,0,0,BY,X1,1,
-X1PAR1RACE,X1 Parent 1: race/ethnicity,BY student level composites,0,0,0,0,BY,X1,0,
-X1P2RELATION,X1 Parent 2: spouse's relationship to 9th grader,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAR2EDU,X1 Parent 2: highest level of education,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAR2EMP,X1 Parent 2: employment status,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAR2OCC2,X1 Parent 2: current/most recent occupation: 2-digit ONET code,BY student level composites,0,0,0,0,BY,X1,0,
+X1PAR1RACE,X1 Parent 1: race/ethnicity,BY student level composites,1,1,0,0,BY,X1,0,89
+X1P2RELATION,X1 Parent 2: spouse's relationship to 9th grader,BY student level composites,1,1,0,0,BY,X1,0,78
+X1PAR2EDU,X1 Parent 2: highest level of education,BY student level composites,1,0,0,0,BY,X1,0,789
+X1PAR2EMP,X1 Parent 2: employment status,BY student level composites,1,0,0,0,BY,X1,0,789
+X1PAR2OCC2,X1 Parent 2: current/most recent occupation: 2-digit ONET code,BY student level composites,1,0,0,0,BY,X1,0,789
 X1PAR2OCC6,X1 Parent 2: current/most recent occupation: 6-digit ONET code,BY student level composites,0,0,0,0,BY,X1,1,
 X1PAR2OCC_STEM1,X1 Parent 2: current/most recent occupation: STEM code 1 (sub-domain),BY student level composites,0,0,0,0,BY,X1,0,
 X1PAR2OCC_STEM2,X1 Parent 2: current/most recent occupation: STEM code 2 (type of occupation),BY student level composites,0,0,0,0,BY,X1,1,
-X1PAR2RACE,X1 Parent 2: race/ethnicity,BY student level composites,0,0,0,0,BY,X1,0,
-X1PAREDU,X1 Parents'/guardians' highest level of education,BY student level composites,1,1,0,0,BY,X1,0,8
+X1PAR2RACE,X1 Parent 2: race/ethnicity,BY student level composites,1,1,0,0,BY,X1,0,789
+X1PAREDU,X1 Parents'/guardians' highest level of education,BY student level composites,1,0,0,0,BY,X1,0,89
 X1PARPATTERN,X1 P1-P2 relationship pattern,BY student level composites,0,0,0,0,BY,X1,0,
-X1MOMRESP,X1 Whether parent questionnaire respondent is mother,BY student level composites,1,1,0,0,BY,X1,0,8
-X1MOMREL,X1 Mother/female guardian's relationship to 9th grader,BY student level composites,1,1,0,0,BY,X1,0,8
-X1MOMEDU,X1 Mother's/female guardian's highest level of education,BY student level composites,1,1,0,0,BY,X1,0,8
-X1MOMEMP,X1 Mother/female guardian's employment status,BY student level composites,1,1,0,0,BY,X1,0,8
-X1MOMOCC2,X1 Mother/female guardian's current/most recent occupation: 2-digit ONET code,BY student level composites,1,1,0,0,BY,X1,0,78
+X1MOMRESP,X1 Whether parent questionnaire respondent is mother,BY student level composites,0,1,0,0,BY,X1,0,8
+X1MOMREL,X1 Mother/female guardian's relationship to 9th grader,BY student level composites,0,1,0,0,BY,X1,0,8
+X1MOMEDU,X1 Mother's/female guardian's highest level of education,BY student level composites,0,0,0,0,BY,X1,0,8
+X1MOMEMP,X1 Mother/female guardian's employment status,BY student level composites,0,1,0,0,BY,X1,0,8
+X1MOMOCC2,X1 Mother/female guardian's current/most recent occupation: 2-digit ONET code,BY student level composites,0,0,0,0,BY,X1,0,78
 X1MOMOCC6,X1 Mother/female guardian's current/most recent occupation: 6-digit ONET code,BY student level composites,0,0,0,0,BY,X1,1,
 X1MOMOCC_STEM1,X1 Mother/female guardian's current/most recent occupation: STEM code 1 (sub-domain),BY student level composites,0,0,0,0,BY,X1,0,
 X1MOMOCC_STEM2,X1 Mother/female guardian's current/most recent occupation: STEM code 2 (type of occupation),BY student level composites,0,0,0,0,BY,X1,1,
-X1MOMRACE,X1 Mother's race/ethnicity,BY student level composites,1,1,0,0,BY,X1,0,89
-X1DADRESP,X1 Whether parent questionnaire respondent is father,BY student level composites,1,1,0,0,BY,X1,0,8
-X1DADREL,X1 Father/male guardian's relationship to 9th grader,BY student level composites,1,1,0,0,BY,X1,0,8
-X1DADEDU,X1 Father's/male guardian's highest level of education,BY student level composites,1,1,0,0,BY,X1,0,8
-X1DADEMP,X1 Father/male guardian's employment status,BY student level composites,1,1,0,0,BY,X1,0,8
-X1DADOCC2,X1 Father/male guardian's current/most recent occupation: 2-digit ONET code,BY student level composites,1,1,0,0,BY,X1,0,78
+X1MOMRACE,X1 Mother's race/ethnicity,BY student level composites,0,1,0,0,BY,X1,0,89
+X1DADRESP,X1 Whether parent questionnaire respondent is father,BY student level composites,0,1,0,0,BY,X1,0,8
+X1DADREL,X1 Father/male guardian's relationship to 9th grader,BY student level composites,0,1,0,0,BY,X1,0,8
+X1DADEDU,X1 Father's/male guardian's highest level of education,BY student level composites,0,0,0,0,BY,X1,0,8
+X1DADEMP,X1 Father/male guardian's employment status,BY student level composites,0,1,0,0,BY,X1,0,8
+X1DADOCC2,X1 Father/male guardian's current/most recent occupation: 2-digit ONET code,BY student level composites,0,0,0,0,BY,X1,0,78
 X1DADOCC6,X1 Father/male guardian's current/most recent occupation: 6-digit ONET code,BY student level composites,0,0,0,0,BY,X1,1,
 X1DADOCC_STEM1,X1 Father/male guardian's current/most recent occupation: STEM code 1 (sub-domain),BY student level composites,0,0,0,0,BY,X1,0,
 X1DADOCC_STEM2,X1 Father/male guardian's current/most recent occupation: STEM code 2 (type of occupation),BY student level composites,0,0,0,0,BY,X1,1,
-X1DADRACE,X1 Father's race/ethnicity,BY student level composites,1,1,0,0,BY,X1,0,89
-X1HHNUMBER,X1 Number of 2009 household members,BY student level composites,1,1,0,0,BY,X1,0,8
-X1FAMINCOME,X1 Total family income from all sources 2008,BY student level composites,1,1,0,0,BY,X1,0,8
-X1POVERTY,X1 Poverty indicator (relative to 100% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,8
-X1POVERTY130,X1 Poverty indicator (relative to 130% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,8
-X1POVERTY185,X1 Poverty indicator (relative to 185% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,8
+X1DADRACE,X1 Father's race/ethnicity,BY student level composites,0,1,0,0,BY,X1,0,89
+X1HHNUMBER,X1 Number of 2009 household members,BY student level composites,1,0,0,0,BY,X1,0,89
+X1FAMINCOME,X1 Total family income from all sources 2008,BY student level composites,1,0,0,0,BY,X1,0,89
+X1POVERTY,X1 Poverty indicator (relative to 100% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,89
+X1POVERTY130,X1 Poverty indicator (relative to 130% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,89
+X1POVERTY185,X1 Poverty indicator (relative to 185% of Census poverty threshold),BY student level composites,1,1,0,0,BY,X1,0,89
 X1SES,X1 Socio-economic status composite,BY student level composites,1,0,0,0,BY,X1,0,
 X1SESQ5,X1 Quintile coding of X1SES composite,BY student level composites,0,0,0,0,BY,X1,0,
 X1SES_U,X1 Socio-economic status composite derived with locale (urbanicity),BY student level composites,0,0,0,0,BY,X1,0,
@@ -114,12 +114,12 @@ X1SCIEFF,X1 Scale of student's science self-efficacy,BY student level composites
 X1SCIINT,X1 Scale of student's interest in fall 2009 science course,BY student level composites,1,0,0,0,BY,X1,0,79
 X1SCHOOLBEL,X1 Scale of student's sense of school belonging,BY student level composites,1,0,0,0,BY,X1,0,9
 X1SCHOOLENG,X1 Scale of student's school engagement,BY student level composites,1,0,0,0,BY,X1,0,9
-X1STU30OCC2,X1 Student occupation at age 30: 2-digit ONET code,BY student level composites,1,1,0,0,BY,X1,1,9
+X1STU30OCC2,X1 Student occupation at age 30: 2-digit ONET code,BY student level composites,1,0,0,0,BY,X1,1,89
 X1STU30OCC6,X1 Student occupation at age 30: 6-digit ONET code,BY student level composites,0,0,0,0,BY,X1,0,
 X1STU30OCC_STEM1,X1 Student occupation at age 30: STEM code 1 (sub-domain),BY student level composites,0,0,0,0,BY,X1,0,
 X1STU30OCC_STEM2,X1 Student occupation at age 30: STEM code 2 (type of occupation),BY student level composites,0,0,0,0,BY,X1,1,
-X1STUEDEXPCT,X1 How far in school 9th grader thinks he/she will get,BY student level composites,1,1,0,0,BY,X1,0,
-X1PAREDEXPCT,X1 How far in school parent thinks 9th grader will go,BY student level composites,1,1,0,0,BY,X1,0,8
+X1STUEDEXPCT,X1 How far in school 9th grader thinks he/she will get,BY student level composites,1,0,0,0,BY,X1,0,8
+X1PAREDEXPCT,X1 How far in school parent thinks 9th grader will go,BY student level composites,1,0,0,0,BY,X1,0,89
 X1STUPRVSCHL_R,X1 School student attended last year (2008-2009): 12-digit NCESID from CCD/PSS (REVISED),BY student level composites,0,0,0,0,BY,X1,1,
 X1IEPFLAG,X1 Individualized Education Plan,BY student level composites,1,1,0,0,BY,X1,0,9
 X1TESTSTAT,X1 Student mathematics assessment status,BY student level composites,0,0,0,0,BY,X1,0,
@@ -209,45 +209,45 @@ X2TXMPROF5,X2 Mathematics proficiency probability score: level 5,F1 student leve
 X2TXMPROF6,X2 Mathematics proficiency probability score: level 6 ** New Level **,F1 student level composites,0,0,0,0,F1,X2,0,
 X2TXMPROF7,X2 Mathematics proficiency probability score: level 7 ** New Level **,F1 student level composites,0,0,0,0,F1,X2,0,
 X2MACC,X2 Mathematics assessment accommodations,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2PARRESP,X2 Whether parent questionnaire respondent is Parent 1,F1 student level composites,0,0,0,0,F1,X2,0,
-X2P1RELATION,X2 Parent 1: relationship to sample member,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR1EDU,X2 Parent 1: highest level of education,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR1EMP,X2 Parent 1: employment status,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR1OCC2,X2 Parent 1: current/most recent occupation: 2-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
+X2PARRESP,X2 Whether parent questionnaire respondent is Parent 1,F1 student level composites,0,0,0,0,F1,X2,1,
+X2P1RELATION,X2 Parent 1: relationship to sample member,F1 student level composites,1,1,0,0,F1,X2,0,8
+X2PAR1EDU,X2 Parent 1: highest level of education,F1 student level composites,1,0,0,0,F1,X2,0,8
+X2PAR1EMP,X2 Parent 1: employment status,F1 student level composites,1,0,0,0,F1,X2,0,8
+X2PAR1OCC2,X2 Parent 1: current/most recent occupation: 2-digit ONET code,F1 student level composites,1,0,0,0,F1,X2,0,78
 X2PAR1OCC6,X2 Parent 1: current/most recent occupation: 6-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
 X2PAR1OCC_STEM1,X2 Parent 1: current/most recent occupation: STEM code 1 (sub-domain),F1 student level composites,0,0,0,0,F1,X2,0,
 X2PAR1OCC_STEM2,X2 Parent 1: current/most recent occupation: STEM code 2 (type of occupation),F1 student level composites,0,0,0,0,F1,X2,1,
-X2PAR1RACE,X2 Parent 1: race/ethnicity,F1 student level composites,0,0,0,0,F1,X2,0,
-X2P2RELATION,X2 Parent 2: spouse's relationship to sample member,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR2EDU,X2 Parent 2: highest level of education,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR2EMP,X2 Parent 2: employment status,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAR2OCC2,X2 Parent 2: current/most recent occupation: 2-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
+X2PAR1RACE,X2 Parent 1: race/ethnicity,F1 student level composites,1,1,0,0,F1,X2,0,689
+X2P2RELATION,X2 Parent 2: spouse's relationship to sample member,F1 student level composites,1,1,0,0,F1,X2,0,78
+X2PAR2EDU,X2 Parent 2: highest level of education,F1 student level composites,1,0,0,0,F1,X2,0,78
+X2PAR2EMP,X2 Parent 2: employment status,F1 student level composites,1,0,0,0,F1,X2,0,78
+X2PAR2OCC2,X2 Parent 2: current/most recent occupation: 2-digit ONET code,F1 student level composites,1,0,0,0,F1,X2,0,78
 X2PAR2OCC6,X2 Parent 2: current/most recent occupation: 6-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
 X2PAR2OCC_STEM1,X2 Parent 2: current/most recent occupation: STEM code 1 (sub-domain),F1 student level composites,0,0,0,0,F1,X2,0,
 X2PAR2OCC_STEM2,X2 Parent 2: current/most recent occupation: STEM code 2 (type of occupation),F1 student level composites,0,0,0,0,F1,X2,1,
-X2PAR2RACE,X2 Parent 2: race/ethnicity,F1 student level composites,0,0,0,0,F1,X2,0,
-X2PAREDU,X2 Parents'/guardians' highest level of education,F1 student level composites,1,1,0,0,F1,X2,0,8
+X2PAR2RACE,X2 Parent 2: race/ethnicity,F1 student level composites,1,1,0,0,F1,X2,0,6789
+X2PAREDU,X2 Parents'/guardians' highest level of education,F1 student level composites,1,0,0,0,F1,X2,0,8
 X2PARPATTERN,X2 P1-P2 relationship pattern,F1 student level composites,0,0,0,0,F1,X2,0,
-X2MOMRESP,X2 Whether parent questionnaire respondent is mother,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2MOMREL,X2 Mother/female guardian's relationship to sample member,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2MOMEDU,X2 Mother's/female guardian's highest level of education,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2MOMEMP,X2 Mother/female guardian's employment status,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2MOMOCC2,X2 Mother/female guardian's current/most recent occupation: 2-digit ONET code,F1 student level composites,1,1,0,0,F1,X2,0,78
+X2MOMRESP,X2 Whether parent questionnaire respondent is mother,F1 student level composites,0,1,0,0,F1,X2,0,89
+X2MOMREL,X2 Mother/female guardian's relationship to sample member,F1 student level composites,0,1,0,0,F1,X2,0,8
+X2MOMEDU,X2 Mother's/female guardian's highest level of education,F1 student level composites,0,0,0,0,F1,X2,0,8
+X2MOMEMP,X2 Mother/female guardian's employment status,F1 student level composites,0,1,0,0,F1,X2,0,8
+X2MOMOCC2,X2 Mother/female guardian's current/most recent occupation: 2-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,78
 X2MOMOCC6,X2 Mother/female guardian's current/most recent occupation: 6-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
 X2MOMOCC_STEM1,X2 Mother/female guardian's current/most recent occupation: STEM code 1 (sub-domain),F1 student level composites,0,0,0,0,F1,X2,0,
 X2MOMOCC_STEM2,X2 Mother/female guardian's current/most recent occupation: STEM code 2 (type of occupation),F1 student level composites,0,0,0,0,F1,X2,1,
-X2MOMRACE,X2 Mother's race/ethnicity,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2DADRESP,X2 Whether parent questionnaire respondent is father,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2DADREL,X2 Father/male guardian's relationship to sample member,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2DADEDU,X2 Father's/male guardian's highest level of education,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2DADEMP,X2 Father/male guardian's employment status,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2DADOCC2,X2 Father/male guardian's current/most recent occupation: 2-digit ONET code,F1 student level composites,1,1,0,0,F1,X2,0,78
+X2MOMRACE,X2 Mother's race/ethnicity,F1 student level composites,0,1,0,0,F1,X2,0,89
+X2DADRESP,X2 Whether parent questionnaire respondent is father,F1 student level composites,0,1,0,0,F1,X2,0,89
+X2DADREL,X2 Father/male guardian's relationship to sample member,F1 student level composites,0,1,0,0,F1,X2,0,8
+X2DADEDU,X2 Father's/male guardian's highest level of education,F1 student level composites,0,0,0,0,F1,X2,0,8
+X2DADEMP,X2 Father/male guardian's employment status,F1 student level composites,0,1,0,0,F1,X2,0,8
+X2DADOCC2,X2 Father/male guardian's current/most recent occupation: 2-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,78
 X2DADOCC6,X2 Father/male guardian's current/most recent occupation: 6-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
 X2DADOCC_STEM1,X2 Father/male guardian's current/most recent occupation: STEM code 1 (sub-domain),F1 student level composites,0,0,0,0,F1,X2,0,
 X2DADOCC_STEM2,X2 Father/male guardian's current/most recent occupation: STEM code 2 (type of occupation),F1 student level composites,0,0,0,0,F1,X2,1,
-X2DADRACE,X2 Father's race/ethnicity,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2HHNUMBER,X2 Number of 2012 household members,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2FAMINCOME,X2 Total family income from all sources 2011,F1 student level composites,1,1,0,0,F1,X2,0,8
+X2DADRACE,X2 Father's race/ethnicity,F1 student level composites,0,1,0,0,F1,X2,0,89
+X2HHNUMBER,X2 Number of 2012 household members,F1 student level composites,1,0,0,0,F1,X2,0,8
+X2FAMINCOME,X2 Total family income from all sources 2011,F1 student level composites,0,0,0,0,F1,X2,0,8
 X2POVERTY,X2 Poverty indicator (relative to 100% of Census poverty threshold),F1 student level composites,1,1,0,0,F1,X2,0,8
 X2POVERTY130,X2 Poverty indicator (relative to 130% of Census poverty threshold),F1 student level composites,1,1,0,0,F1,X2,0,8
 X2POVERTY185,X2 Poverty indicator (relative to 185% of Census poverty threshold),F1 student level composites,1,1,0,0,F1,X2,0,8
@@ -255,12 +255,12 @@ X2SES,X2 Socio-economic status composite,F1 student level composites,1,0,1,0,F1,
 X2SESQ5,X2 Quintile coding of X2SES composite,F1 student level composites,0,0,0,0,F1,X2,0,
 X2SES_U,X2 Socio-economic status composite derived with locale (urbanicity),F1 student level composites,0,0,0,0,F1,X2,0,
 X2SESQ5_U,X2 Quintile coding of X2SES_U composite derived with locale (urbanicity),F1 student level composites,0,0,0,0,F1,X2,0,
-X2REPEATG11,X2 Percent of 11th graders repeating 11th grade-categorical,F1 student level composites,1,1,0,0,F1,X2,0,46789
-X2RETURNG11,X2 Percent of 11th graders returning to school-categorical,F1 student level composites,1,1,0,0,F1,X2,0,46789
+X2REPEATG11,X2 Percent of 11th graders repeating 11th grade-categorical,F1 student level composites,1,0,0,0,F1,X2,0,46789
+X2RETURNG11,X2 Percent of 11th graders returning to school-categorical,F1 student level composites,1,0,0,0,F1,X2,0,46789
 X2BEHAVEIN,X2 Scale of school motivation,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2MEFFORT,X2 Scale of math class effort,F1 student level composites,1,0,0,0,F1,X2,0,789
 X2SEFFORT,X2 Scale of science class effort,F1 student level composites,1,0,0,0,F1,X2,0,789
-X2PROBLEM,X2 Scale of problems at high school,F1 student level composites,1,0,0,0,F1,X2,0,8
+X2PROBLEM,X2 Scale of problems at high school,F1 student level composites,1,0,0,0,F1,X2,0,9
 X2MTHID,X2 Scale of student's mathematics identity,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2MTHUTI,X2 Scale of student's mathematics utility,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2MTHEFF,X2 Scale of student's mathematics self-efficacy,F1 student level composites,1,0,0,0,F1,X2,0,89
@@ -269,24 +269,24 @@ X2SCIID,X2 Scale of student's science identity,F1 student level composites,1,0,0
 X2SCIUTI,X2 Scale of student's science utility,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2SCIEFF,X2 Scale of student's science self-efficacy,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2SCIINT,X2 Scale of student's interest in fall 2009 science course,F1 student level composites,1,0,0,0,F1,X2,0,789
-X2STU30OCC2,X2 Student occupation at age 30: 2-digit ONET code,F1 student level composites,1,1,0,0,F1,X2,0,89
+X2STU30OCC2,X2 Student occupation at age 30: 2-digit ONET code,F1 student level composites,1,0,0,0,F1,X2,0,89
 X2STU30OCC6,X2 Student occupation at age 30: 6-digit ONET code,F1 student level composites,0,0,0,0,F1,X2,0,
 X2STU30OCC_STEM1,X2 Student occupation at age 30: STEM code 1 (sub-domain),F1 student level composites,0,0,0,0,F1,X2,0,
 X2STU30OCC_STEM2,X2 Student occupation at age 30: STEM code 2 (type of occupation),F1 student level composites,0,0,0,0,F1,X2,1,
-X2STUEDEXPCT,X2 How far in school sample member thinks he/she will get,F1 student level composites,1,1,0,0,F1,X2,0,8
-X2PAREDEXPCT,X2 How far in school parent thinks sample member will go,F1 student level composites,1,1,0,0,F1,X2,0,8
+X2STUEDEXPCT,X2 How far in school sample member thinks he/she will get,F1 student level composites,1,0,0,0,F1,X2,0,8
+X2PAREDEXPCT,X2 How far in school parent thinks sample member will go,F1 student level composites,1,0,0,0,F1,X2,0,8
 X2S2SSPR12,X2 S2 Teenager taking science/computer science/tech class(es) in spring 2012,F1 student level composites,1,1,0,0,F1,X2,0,789
-X2REQLEVEL,X2 Highest level of education student indicates will meet minimum requirements,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2S2EARNNOHS,X2 S2 Earnings without HS diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2S2EARNHS,X2 S2 Earnings with HS diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2S2EARNOCC,X2 S2 Earnings with occupational training diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2S2EARN2YPUB,X2 S2 Earnings with two year college degree standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2S2EARN4Y,X2 S2 Earnings with four year college degree standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,89
-X2PEARNNOHS,X2 Parent questionnaire earnings without HS diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,689
-X2PEARNHS,X2 Parent questionnaire earnings with HS diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,689
-X2PEARNOCC,X2 Parent questionnaire earnings with occupational training diploma standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,689
-X2PEARN2YPUB,X2 Parent questionnaire earnings with two year college degree standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,689
-X2PEARN4Y,X2 Parent questionnaire earnings with four year college degree standardized by year,F1 student level composites,1,1,0,0,F1,X2,0,689
+X2REQLEVEL,X2 Highest level of education student indicates will meet minimum requirements,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2S2EARNNOHS,X2 S2 Earnings without HS diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2S2EARNHS,X2 S2 Earnings with HS diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2S2EARNOCC,X2 S2 Earnings with occupational training diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2S2EARN2YPUB,X2 S2 Earnings with two year college degree standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2S2EARN4Y,X2 S2 Earnings with four year college degree standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,89
+X2PEARNNOHS,X2 Parent questionnaire earnings without HS diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,689
+X2PEARNHS,X2 Parent questionnaire earnings with HS diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,689
+X2PEARNOCC,X2 Parent questionnaire earnings with occupational training diploma standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,689
+X2PEARN2YPUB,X2 Parent questionnaire earnings with two year college degree standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,689
+X2PEARN4Y,X2 Parent questionnaire earnings with four year college degree standardized by year,F1 student level composites,1,0,0,0,F1,X2,0,689
 X2TESTSTAT,X2 Student mathematics assessment status,F1 student level composites,0,0,0,0,F1,X2,0,
 X2TESTDATE,X2 Student mathematics assessment date (YYYYMM),F1 student level composites,0,0,0,0,F1,X2,0,
 X2SQSTAT,X2 Student questionnaire status,F1 student level composites,0,0,0,0,F1,X2,0,
@@ -573,7 +573,7 @@ X4GEDDATE,X4 GED test date passed,F2 student level composites,0,0,0,0,F2,X4,1,
 X4GEDSTATE,X4 GED test state taken,F2 student level composites,0,0,0,0,F2,X4,1,
 X4EVRAPPCLG,X4 Whether applied to or registered at a college,F2 student level composites,0,0,0,0,F2,X4,0,
 X4CLGAPPNUM,X4 Number of colleges applied to when first applied,F2 student level composites,0,0,0,0,F2,X4,0,
-X4EVRATNDCLG,X4 Imputed version of S4EVRATNDCLG,F2 student level composites,0,0,0,0,F2,X4,0,
+X4EVRATNDCLG,X4 Imputed version of S4EVRATNDCLG,F2 student level composites,1,0,0,0,F2,X4,0,8
 X4EVR2YPUB,X4 Ever attended 2-year public institution after high school,F2 student level composites,0,0,0,0,F2,X4,0,
 X4ATNDCLG16FB,X4 Whether respondent was enrolled in postsecondary education in February 2016,F2 student level composites,0,0,0,0,F2,X4,0,
 X4CHOICEAPPID,X4 First choice among colleges applied to,F2 student level composites,0,0,0,0,F2,X4,1,
@@ -620,8 +620,8 @@ X4RFDGCOMP,X4 Completion status of reference degree/certificate by February 2016
 X4RFDGSAMEMAJ,X4 Major for reference degree is initial considered major,F2 student level composites,0,0,0,0,F2,X4,0,
 X4SIBPSE,X4 Evidence exists of postsecondary enrollment by a sibling,F2 student level composites,0,0,0,0,F2,X4,0,
 X4ANYJOB,X4 Imputed version of S4ANYJOB,F2 student level composites,0,0,0,0,F2,X4,0,
-X4WORKING16FB,X4 Imputed version of S4WORKING16FB,F2 student level composites,1,0,0,0,F2,X4,0,
-X4EMPHRSFB16,X4 Average hours worked in February 2016 job,F2 student level composites,1,0,0,0,F2,X4,0,
+X4WORKING16FB,X4 Imputed version of S4WORKING16FB,F2 student level composites,0,0,0,0,F2,X4,0,
+X4EMPHRSFB16,X4 Average hours worked in February 2016 job,F2 student level composites,0,0,0,0,F2,X4,0,
 X4UNEMP16FB,X4 Imputed version of S4UNEMP16FB,F2 student level composites,0,0,0,0,F2,X4,0,
 X4OCCFB2,X4 February 2016 occupation: 2-digit ONET-SOC code,F2 student level composites,0,0,0,0,F2,X4,0,
 X4OCCFB6,X4 February 2016 occupation: 6-digit ONET-SOC code,F2 student level composites,0,0,0,0,F2,X4,1,
@@ -1473,7 +1473,7 @@ S3CNSLJOB,S3 A17C Has met with high school counselor year about finding job in 2
 S3CLGINFLU,S3 A18 Person who has most influence on thinking about education after high school,U13 student instrument,0,0,0,0,U13,S3,0,
 S3AIDINFLU,S3 A19 Person who has most influence on thinking about financial aid,U13 student instrument,0,0,0,0,U13,S3,0,
 S3CAREERINFLU,S3 A20 Person who has most influence on thinking about careers,U13 student instrument,0,0,0,0,U13,S3,0,
-S3CLASSES,S3 B01A Taking postsecondary classes as of Nov 1 2013,U13 student instrument,1,0,0,0,U13,S3,0,
+S3CLASSES,S3 B01A Taking postsecondary classes as of Nov 1 2013,U13 student instrument,0,0,0,0,U13,S3,0,
 S3APPRENTICE,S3 B01B Apprenticing as of Nov 1 2013,U13 student instrument,0,0,0,0,U13,S3,0,
 S3WORK,S3 B01C Working for pay as of Nov 1 2013,U13 student instrument,0,0,0,0,U13,S3,0,
 S3MILITARY,S3 B01D Serving in the military as of Nov 1 2013,U13 student instrument,0,0,0,0,U13,S3,0,
@@ -1859,7 +1859,7 @@ S4WORKNENR2,S4 C41 Worked while not attending college: February 2016/last job,F2
 S4WORKNENR2_I,S4 C41_I Worked while not attending college: February 2016/last job - logical inference flag,F2 student instrument,0,0,0,0,F2,S4,0,
 S4WORKHRNENR2,S4 C42 Hours worked while not attending college: February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
 S4WANTXHRS2,S4 C43 Wanted to work more hours: February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
-S4JOBSAT2,S4 C44 Job satisfaction: February 2016/last job,F2 student instrument,1,0,0,0,F2,S4,0,
+S4JOBSAT2,S4 C44 Job satisfaction: February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
 S4APPRENTICE2,S4 C45 Job is apprenticeship: February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
 S4LCNSE4JOB2,S4 C46 Job requires license from government agency: February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
 S4LCNSE4JOB2_I,S4 C46_I Job requires license from government agency: February 2016/last job - logical inference flag,F2 student instrument,0,0,0,0,F2,S4,0,
@@ -1877,8 +1877,8 @@ S4OCC30CERTAIN,S4 C53 Certainty about job at age 30,F2 student instrument,0,0,0,
 S4OCC30RELATE,S4 C54 Job at age 30 is related to February 2016/last job,F2 student instrument,0,0,0,0,F2,S4,0,
 S4OCC30RELATE_I,S4 C54_I Job at age 30 is related to February 2016/last job - logical inference flag,F2 student instrument,0,0,0,0,F2,S4,0,
 S4OCC30EARN,S4 C55 Expected yearly salary at age 30,F2 student instrument,0,0,0,0,F2,S4,0,
-S4JOBCONTRIB,S4 C56A Importance of contributing to society compared to salary,F2 student instrument,1,0,0,0,F2,S4,0,
-S4JOBBALANCE,S4 C56B Importance of balancing work and personal life compared to salary,F2 student instrument,1,0,0,0,F2,S4,0,
+S4JOBCONTRIB,S4 C56A Importance of contributing to society compared to salary,F2 student instrument,0,0,0,0,F2,S4,0,
+S4JOBBALANCE,S4 C56B Importance of balancing work and personal life compared to salary,F2 student instrument,0,0,0,0,F2,S4,0,
 S4JOBDECISION,S4 C56C Importance of deciding on how to get work done compared to salary,F2 student instrument,0,0,0,0,F2,S4,0,
 S4JOBSECURE,S4 C56D Importance of job security compared to salary,F2 student instrument,0,0,0,0,F2,S4,0,
 S4LOCATION,S4 C56E Importance of geographic location compared to salary,F2 student instrument,0,0,0,0,F2,S4,0,
@@ -1928,7 +1928,7 @@ S4DEPCHILDNUM,S4 D24 Number of children receive more than half support from resp
 S4DEPCHILDNUM_I,S4 D24_I Number of children receive more than half support from respondent - logical inference flag,F2 student instrument,0,0,0,0,F2,S4,0,
 S4DEPOTH,S4 D25 Has other dependents,F2 student instrument,0,0,0,0,F2,S4,0,
 S4DEPOTHNUM,S4 D26 Number of other dependents,F2 student instrument,0,0,0,0,F2,S4,0,
-S4GOVTBEN,S4 D27 Household received government benefits,F2 student instrument,1,0,0,0,F2,S4,0,
+S4GOVTBEN,S4 D27 Household received government benefits,F2 student instrument,0,0,0,0,F2,S4,0,
 S4PARCHILDCR,S4 D28A Parents paid: expenses for children or provided childcare,F2 student instrument,0,0,0,0,F2,S4,0,
 S4PARHOUSING,"S4 D28B Parents paid: rent, room and board, or mortgage",F2 student instrument,0,0,0,0,F2,S4,0,
 S4PARHEALTH,S4 D28C Parents paid: health care expenses,F2 student instrument,0,0,0,0,F2,S4,0,
