@@ -13,10 +13,13 @@ Rplots.pdf
 *.lot
 *.out
 *.run.xml
+*.ttt
 
-data/raw
+data/raw/*
+!data/raw/varlist.csv
 data/clean
 descriptives
 estimates
 figures
 tables
+
