@@ -1,8 +1,7 @@
 This repository contains the replication files for  
 
-> Skinner, B.T. and Doyle, W.R. (working). Do civic returns to higher
-> education differ across subpopulations? An analysis using propensity
-> forests
+> Skinner, B.T. and Doyle, W.R. (working). Are civic returns to higher education different across
+  subpopulations? An analysis using propensity forests
 
 ## To run
 
