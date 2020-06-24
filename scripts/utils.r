@@ -108,6 +108,41 @@ pval_func <- function(est, se) {
 `%&%` <- function(a,b) paste(a,b,sep = " & ")
 `%|%` <- function(a,b) paste(a,b,sep = " | ")
 
+## make a vector into a tex column
+to_tex_col <- function(fname_vec) {
+    paste(to_table_names(fname_vec), collapse = "&")
+}
+
+## convert nums to table symbols
+convert_func <- function(x) {
+    ifelse(x == "1", "$\\cdot$",
+    ifelse(x == "2", "X",
+    ifelse(x == "3", "O", "")))
+}
+
+## add italics
+to_italic <- function(x) { gsub("(.+)", "{\\\\itshape \\1}", x) }
+
+## add parentheses
+add_paren <- function(x) { gsub("(.+)", "(\\1)", x) }
+
+## add indentation (\hspace)
+add_hspace <- function(x, em) {
+    gsub("(.+)", paste0("\\\\hspace{", em, "em}\\1"), x)
+}
+
+## add one star
+add_star <- function(x) { gsub("(.+)", "\\1$^*$", x) }
+
+## add multiple stars based on p-value
+add_stars <- function(x, y) {
+    y <- as.numeric(y)
+    case_when(
+        y <= 0.05 & y > 0.01 ~ gsub("(.+)", "\\1$^{*}$", x),
+        y <= 0.01 & y > 0.001 ~ gsub("(.+)", "\\1$^{**}$", x),
+        y <= 0.001 ~ gsub("(.+)", "\\1$^{***}$", x),
+        TRUE ~ as.character(x)
+    )}
 
 ## -----------------------------------------------------------------------------
 ## END SCRIPT
