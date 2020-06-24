@@ -9,18 +9,18 @@
 
 ## directories
 args <- commandArgs(trailingOnly = TRUE)
-root <- ifelse(length(args) == 0, '..', args)
-est_dir <- file.path(root, 'estimates')
-scr_dir <- file.path(root, 'scripts')
+root <- ifelse(length(args) == 0, "..", args)
+est_dir <- file.path(root, "estimates")
+scr_dir <- file.path(root, "scripts")
 
 ## source utils
-source(file.path(scr_dir, 'utils.r'))
+source(file.path(scr_dir, "utils.r"))
 
 ## libraries
-quiet_require(c('tidyverse','grf'))
+quiet_require(c("broom", "tidyverse", "grf"))
 
 ## header message
-proj_message('pull_figure_estimates.r','h')
+proj_message("pull_figure_estimates.r","h")
 
 ## -----------------------------------------------
 ## utility function
@@ -29,7 +29,7 @@ proj_message('pull_figure_estimates.r','h')
 get_figure_estimates <- function(cf,
                                  est_name,
                                  subset_str = NULL,
-                                 target_sample = 'overlap') {
+                                 target_sample = "overlap") {
     if (!is.null(subset_str)) {
         x <- cf$X.orig
         subset_expr <- eval(parse(text = subset_str))
@@ -45,8 +45,8 @@ get_figure_estimates <- function(cf,
                                          target.sample = target_sample,
                                          subset = subset_expr)
     df <- tibble(group = est_name,
-                 est = ate[['estimate']],
-                 se = ate[['std.err']],
+                 est = ate[["estimate"]],
+                 se = ate[["std.err"]],
                  obs = n)
     return(df)
 }
@@ -55,8 +55,8 @@ get_figure_estimates <- function(cf,
 ## read in causal forest objects
 ## -----------------------------------------------
 
-proj_message('Reading in causal forest objects')
-files <- list.files(file.path(est_dir), '*.rds', full.names = TRUE)
+proj_message("Reading in causal forest objects")
+files <- list.files(file.path(est_dir), "*.rds", full.names = TRUE)
 
 ## -----------------------------------------------
 ## pre-specify estimates
@@ -73,7 +73,7 @@ sub_strs <- list(
     c('ameri', "x[,'x1race.1'] == 1"),
     c('asian', "x[,'x1race.2'] == 1"),
     c('black', "x[,'x1race.3'] == 1"),
-    c('hispc', "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)"),
+    c('hispc', "x[,'x1race.4'] == 1"),
     c('multp', "x[,'x1race.6'] == 1"),
     c('natpi', "x[,'x1race.7'] == 1"),
     c('white', "x[,'x1race.8'] == 1"),
@@ -85,9 +85,7 @@ sub_strs <- list(
     c('ameri_m', "x[,'x1sex.1'] == 1 & x[,'x1race.1'] == 1"),
     c('asian_m', "x[,'x1sex.1'] == 1 & x[,'x1race.2'] == 1"),
     c('black_m', "x[,'x1sex.1'] == 1 & x[,'x1race.3'] == 1"),
-    c('hispc_m', paste("x[,'x1sex.1'] == 1",
-                       "&",
-                       "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)")),
+    c('hispc_m', "x[,'x1sex.1'] == 1 & x[,'x1race.4'] == 1"),
     c('multp_m', "x[,'x1sex.1'] == 1 & x[,'x1race.6'] == 1"),
     c('natpi_m', "x[,'x1sex.1'] == 1 & x[,'x1race.7'] == 1"),
     c('white_m', "x[,'x1sex.1'] == 1 & x[,'x1race.8'] == 1"),
@@ -95,9 +93,7 @@ sub_strs <- list(
     c('ameri_f', "x[,'x1sex.2'] == 1 & x[,'x1race.1'] == 1"),
     c('asian_f', "x[,'x1sex.2'] == 1 & x[,'x1race.2'] == 1"),
     c('black_f', "x[,'x1sex.2'] == 1 & x[,'x1race.3'] == 1"),
-    c('hispc_f', paste("x[,'x1sex.2'] == 1",
-                       "&",
-                       "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)")),
+    c('hispc_f', "x[,'x1sex.2'] == 1 & x[,'x1race.4'] == 1"),
     c('multp_f', "x[,'x1sex.2'] == 1 & x[,'x1race.6'] == 1"),
     c('natpi_f', "x[,'x1sex.2'] == 1 & x[,'x1race.7'] == 1"),
     c('white_f', "x[,'x1sex.2'] == 1 & x[,'x1race.8'] == 1"),
@@ -111,9 +107,7 @@ sub_strs <- list(
     c('pov185b_ameri', "x[,'x1poverty185.1'] == 1 & x[,'x1race.1'] == 1"),
     c('pov185b_asian', "x[,'x1poverty185.1'] == 1 & x[,'x1race.2'] == 1"),
     c('pov185b_black', "x[,'x1poverty185.1'] == 1 & x[,'x1race.3'] == 1"),
-    c('pov185b_hispc', paste("x[,'x1poverty185.1'] == 1",
-                             "&",
-                             "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)")),
+    c('pov185b_hispc', "x[,'x1poverty185.1'] == 1 & x[,'x1race.4'] == 1"),
     c('pov185b_multp', "x[,'x1poverty185.1'] == 1 & x[,'x1race.6'] == 1"),
     c('pov185b_natpi', "x[,'x1poverty185.1'] == 1 & x[,'x1race.7'] == 1"),
     c('pov185b_white', "x[,'x1poverty185.1'] == 1 & x[,'x1race.8'] == 1"),
@@ -121,9 +115,7 @@ sub_strs <- list(
     c('pov185a_ameri', "x[,'x1poverty185.0'] == 1 & x[,'x1race.1'] == 1"),
     c('pov185a_asian', "x[,'x1poverty185.0'] == 1 & x[,'x1race.2'] == 1"),
     c('pov185a_black', "x[,'x1poverty185.0'] == 1 & x[,'x1race.3'] == 1"),
-    c('pov185a_hispc', paste("x[,'x1poverty185.0'] == 1",
-                             "&",
-                             "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)")),
+    c('pov185a_hispc', "x[,'x1poverty185.0'] == 1 & x[,'x1race.4'] == 1"),
     c('pov185a_multp', "x[,'x1poverty185.0'] == 1 & x[,'x1race.6'] == 1"),
     c('pov185a_natpi', "x[,'x1poverty185.0'] == 1 & x[,'x1race.7'] == 1"),
     c('pov185a_white', "x[,'x1poverty185.0'] == 1 & x[,'x1race.8'] == 1"),
@@ -147,7 +139,7 @@ sub_strs <- list(
                                "x[,'x1sex.1'] == 1")),
     c('pov185b_m_hispc', paste("x[,'x1poverty185.1'] == 1",
                                "&",
-                               "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)",
+                               "x[,'x1race.4'] == 1",
                                "&",
                                "x[,'x1sex.1'] == 1")),
     c('pov185b_m_multp', paste("x[,'x1poverty185.1'] == 1",
@@ -188,7 +180,7 @@ sub_strs <- list(
                                "x[,'x1sex.1'] == 1")),
     c('pov185a_m_hispc', paste("x[,'x1poverty185.0'] == 1",
                                "&",
-                               "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)",
+                               "x[,'x1race.4'] == 1",
                                "&",
                                "x[,'x1sex.1'] == 1")),
     c('pov185a_m_multp', paste("x[,'x1poverty185.0'] == 1",
@@ -229,7 +221,7 @@ sub_strs <- list(
                                "x[,'x1sex.2'] == 1")),
     c('pov185b_f_hispc', paste("x[,'x1poverty185.1'] == 1",
                                "&",
-                               "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)",
+                               "x[,'x1race.4'] == 1",
                                "&",
                                "x[,'x1sex.2'] == 1")),
     c('pov185b_f_multp', paste("x[,'x1poverty185.1'] == 1",
@@ -270,7 +262,7 @@ sub_strs <- list(
                                "x[,'x1sex.2'] == 1")),
     c('pov185a_f_hispc', paste("x[,'x1poverty185.0'] == 1",
                                "&",
-                               "(x[,'x1race.4'] == 1 | x[,'x1race.5'] == 1)",
+                               "x[,'x1race.4'] == 1",
                                "&",
                                "x[,'x1sex.2'] == 1")),
     c('pov185a_f_multp', paste("x[,'x1poverty185.0'] == 1",
@@ -299,25 +291,69 @@ sub_strs <- list(
 ## pull estimates
 ## -----------------------------------------------
 
+## init test calibration list
+tc_list <- vector("list", length = length(files))
+
+proj_message("Pulling, munging, and saving estimates from:")
 for (f in files) {
+
     ## read in forest object
     cf <- readRDS(f)
+
+    ## test calibration
+    tc_list[[match(f, files)]] <- test_calibration(cf)
+
     ## get basename for easy label and save
     bn <- get_basename(f)
-    proj_message('Pulling, munging, and saving estimates from:')
-    proj_message(bn,'s')
-    ## pull estimates
-    ests <- map(sub_strs,
-                ~ get_figure_estimates(cf,
-                                       est_name = .x[1],
-                                       subset_str = .x[2])) %>%
-        bind_rows %>%
+    proj_message(bn,"s")
+
+    ## pull estimates for subgroups in data
+    ests_sgs <- map(sub_strs,
+                    ~ get_figure_estimates(cf,
+                                           est_name = .x[1],
+                                           subset_str = .x[2])) %>%
+        bind_rows
+
+    ## pull estimates based on propensity for enrollment
+    prop <- cf$W.hat
+    orig <- cf$W.orig
+    prop_cut <- cut(prop, c(0,.5,.6,.7,.8,.85,.9,.925,.95,.975,1))
+    ests_cut <- map(1:length(unique(prop_cut)),
+                    ~ {
+                        en <- paste0("cut_", levels(prop_cut)[.x])
+                        ss <- paste0("(as.integer(prop_cut) == ", .x, ")")
+                        get_figure_estimates(cf,
+                                             est_name = en,
+                                             subset_str = ss)
+                    }) %>%
+        bind_rows
+
+    ## combine estimates and compute 95% CI
+    ests <- bind_rows(ests_sgs, ests_cut) %>%
         mutate(hi95 = est + (qnorm(.975) * se),
                lo95 = est - (qnorm(.975) * se),
                outcome = bn)
     ## write
-    write_csv(ests, file.path(est_dir, paste0(bn, '_est.csv')))
+    write_csv(ests, file.path(est_dir, paste0(bn, "_est.csv")))
 }
+
+## -----------------------------------------------
+## test calibration to file
+## -----------------------------------------------
+
+proj_message("Saving test calibration results")
+## convert test calibration list to tidy tibble
+tc_df <- tc_list %>%
+    setNames(get_basename(files)) %>%
+    map2(.x = .,
+         .y = names(.),
+         ~ tidy(.x) %>%
+             mutate(model = .y)) %>%
+    bind_rows %>%
+    select(model, everything())
+
+## write
+write_csv(tc_df, file.path(est_dir, "test_calibration.csv"))
 
 ## -----------------------------------------------------------------------------
 ## END SCRIPT
