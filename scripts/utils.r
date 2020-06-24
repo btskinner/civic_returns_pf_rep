@@ -27,19 +27,16 @@ quiet_require <- function(pkgs) {
 }
 
 ## project messages
-proj_message <- function(text, type = "m") {
+proj_message <- function(text, type = 'm') {
     w <- 75
-    if (type == "h") {
-        message("> ", strwrap(text, width = w))
-    } else if (type == "s") {
-        message(" --- ", strwrap(text, width = w))
+    if (type == 'h') {
+        message('> ', strwrap(text, width = w))
+    } else if (type == 's') {
+        message(' --- ', strwrap(text, width = w))
     } else {
-        message(" - ", strwrap(text, width = w))
+        message(' - ', strwrap(text, width = w))
     }
 }
-
-## plyr function to round to arbitrary number
-round_any <- function(x, accuracy, f = round){f(x/ accuracy) * accuracy}
 
 ## quick function to get basename of file (remove path and extension)
 ## e.g. > ../path/filename.csv --> filename
@@ -48,7 +45,7 @@ get_basename <- function(x) basename(tools::file_path_sans_ext(x))
 ## take a number, break it into its digits, and make them negative
 ## e.g. > 1234 --> c(-1,-2,-3,-4); 789 --> c(-7,-8,-9)
 int_to_neg_vec <- function(x) {
-    as.integer(unlist(stringr::str_split(abs(as.numeric(x)),""))) * -1
+    as.integer(unlist(str_split(abs(as.numeric(x)),''))) * -1
 }
 
 ## replace missing values based on lookup table
@@ -56,38 +53,14 @@ int_to_neg_vec <- function(x) {
 ## > X1MOMOCC2 missing values are -7,-8 according to codebook
 ## > lookup table (cw) has 78 as reserve code
 ## > filter lookup table to X1MOMOCC2 row and convert 78 --> c(-7,-8)
-## > replace with NA: df[as.numeric(df[[.x]]) %in% miss_vals, .x] <- NA
-val_to_na <- function(df, vars, cw, cw_var_col, cw_res_col) {
-    ## get column names for later ordering
-    all <- names(df)
-    ## pull out non-missing columns
-    tmp <- select(df, -all_of(vars))
-    ## replace reserved values with NA, column by column; bind into tibble
-    fix <- map_dfc(vars,
-                   ~ {
-                       ## get missing values from crosswalk
-                       miss_vals <- filter(cw, {{ cw_var_col }} == .x) %>%
-                           pull({{ cw_res_col }}) %>%
-                           int_to_neg_vec
-                       ## replace missing with NA
-                       df[as.numeric(df[[.x]]) %in% miss_vals, .x] <- NA
-                       ## return fixed vector
-                       df[[.x]]
-                   }) %>%
-        ## replace `V#` column names with actual names
-        setNames(vars)
-    ## rebind non-missing and fixed columns; reorder
-    bind_cols(tmp, fix) %>% select(all_of(all))
+## > ifelse() replace missing
+val_to_na <- function(df, var, cw) {
+    miss_vals <- filter(cw, varname == var) %>% pull(reserve) %>% int_to_neg_vec
+    ifelse(as.numeric(df[[var]]) %in% miss_vals, NA, df[[var]])
 }
 
 ## convert a vector to a factor (exclude = NULL means NA becomes level <NA>)
 var_to_factor <- function(x, exclude = NULL) { factor(x, exclude = exclude) }
-
-## convert vector of effectively ordered numbers into ordered,
-## continuous categories
-## e.g.
-## > c(0, 1000, 5000, 200) --> c(1, 3, 4, 2)
-ordcat_to_rank <- function(x) { match(x, sort(unique(x))) }
 
 ## garbage collect w/o message
 quiet_gc <- function(quiet = TRUE, ...) {
@@ -100,13 +73,13 @@ na_to_null <- function(x) if (is.na(x)) return(NULL) else return(x)
 ## quick function to calculate p-value from coefficient and its se (two-tail)
 pval_func <- function(est, se) {
     pval <- (1 - pnorm(abs(est/se)))*2
-    out <- ifelse(pval < 0.01, "<0.01", round(pval,2))
+    out <- ifelse(pval < 0.01, '<0.01', round(pval,2))
 }
 
 ## quick pastes
-`%+%` <- function(a,b) paste(a,b,sep = " ")
-`%&%` <- function(a,b) paste(a,b,sep = " & ")
-`%|%` <- function(a,b) paste(a,b,sep = " | ")
+`%+%` <- function(a,b) paste(a,b,sep = ' ')
+`%&%` <- function(a,b) paste(a,b,sep = ' & ')
+`%|%` <- function(a,b) paste(a,b,sep = ' | ')
 
 
 ## -----------------------------------------------------------------------------
